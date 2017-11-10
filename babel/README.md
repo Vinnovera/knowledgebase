@@ -23,7 +23,7 @@ var testFunc = function testFunc(_ref) {
 };
 ```
 
-This makes it so we can use [modern and future JavaScript](http://es6-features.org/) today, without a great degree of backwards compability.
+This makes it so we can use [modern and future JavaScript](http://es6-features.org/) today, with a great degree of backwards compability.
 
 
 ### Get it running
