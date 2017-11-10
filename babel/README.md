@@ -52,7 +52,7 @@ You define which presets to use in your `.babelrc` file.
 You can add new presets by installing them with NPM:
 
 ```bash
-$ npm install --save babel-preset-react
+$ npm install --save-dev babel-preset-react
 ```
 
 And then adding them to your `.babelrc` file:
@@ -63,6 +63,6 @@ And then adding them to your `.babelrc` file:
 }
 ```
 
-All JavaScript files in your `src` folder will be transpiled into your `dest` folder, together with a [Source Map](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map).
+All JavaScript files in your `src` folder will be transpiled into your `dist` folder, together with a [Source Map](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map).
 
 Have fun!

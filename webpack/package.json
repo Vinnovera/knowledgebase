@@ -1,0 +1,8 @@
+{
+ 	"name": "know-webpack",
+ 	"version": "0.0.1",
+	"scripts": {},
+	"devDependencies": {
+		"webpack": "^3.8.1"
+	}
+}
