@@ -1,8 +1,12 @@
 {
- 	"name": "know-webpack",
- 	"version": "0.0.1",
-	"scripts": {},
+	"name": "know-webpack",
+	"version": "0.0.1",
+	"scripts": {
+		"watch": "webpack --progress --colors --watch"
+	},
 	"devDependencies": {
+		"css-loader": "^0.28.7",
+		"style-loader": "^0.19.0",
 		"webpack": "^3.8.1"
 	}
 }
