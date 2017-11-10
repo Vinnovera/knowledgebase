@@ -1,0 +1,11 @@
+{
+	"name": "know-babel",
+	"version": "0.0.1",
+	"scripts": {
+		"watch": "babel src --watch --out-dir dest --source-maps"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-env": "^1.6.1"
+	}
+}
