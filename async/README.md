@@ -71,7 +71,7 @@ This is not very readable and can be rather hard to follow, even with fairly cle
 
 ### Promises
 
-While callbacks are certainly reasonable in a lot of cases, if you need to chain many asynchronous jobs there are other ways to do it. One such way is using promises. A promise is an object that may return a value (or an error) sometime in the future. A promise can be in one of three states: Pending, resolved or rejected.
+While callbacks are certainly reasonable in a lot of cases, if you need to chain many asynchronous jobs there are other ways to do it. One such way is using Promises. A Promise is an object that may return a value (or an error) sometime in the future. A Promise can be in one of three states: Pending, resolved or rejected.
 
 This is how the example above could look like using promises:
 
@@ -92,4 +92,22 @@ getUser()
 	});
 ```
 
-A promise is "thenable", meaning it has a `.then()`-method that is invoked when the promise is either resolved or rejected. A `.then()` returns a new promise. This means that you can chain promises together, like this:
+A Promise is "thenable", meaning it has a `.then()`-method that is invoked when the Promise is either resolved or rejected. A `.then()` returns a new Promise. This means that you can chain Promises together, like this:
+
+```javascript
+button.on('click', (event) => {
+	getUser()
+		.then(user => {
+			return Promise.all(user.images.map(image => {
+				return getImageSize(image)
+					.then(resizeImage)
+					.then(postImage)
+					.then(() => console.log('Image is resized'));
+			}));
+		});
+});
+```
+
+Here you can also see a sample usage of `Promise.all()` which is a Promise that resolves when an iterable list of promises all have resolved.
+
+### Async/Await
