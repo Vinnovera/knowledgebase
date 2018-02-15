@@ -111,3 +111,29 @@ button.on('click', (event) => {
 Here you can also see a sample usage of `Promise.all()` which is a Promise that resolves when an iterable list of promises all have resolved.
 
 ### Async/Await
+
+Since mid 2017 Node fully supports a new way of writing asynchronous code: Async / await. It's built on top of Promises, but it looks a lot more like, and behaves a bit more similar to, synchronous code. 
+
+Declaring a function as `async` means that the function always returns a promise. The promise will resolve with the value returned by the async function. The `await` keyword, which can only be used inside `async`-functions, means that the execution of the code will wait until the `async` function has resolved. 
+
+```javascript
+const getUser = async () => {
+	const user = JSON.parse(await fetch('/user'));
+	return user;
+};
+```
+
+While not only looking very readable, it also means it's possible to wrap both synchronous and asynchronous code in the same `try/catch` for easy to follow error handling:
+
+```javascript
+const getUser = async () => {
+	try {
+		const user = JSON.parse(await fetch('/user'));
+		return user;
+	} catch (err) {
+		console.log(err);
+	}
+};
+```
+
+
