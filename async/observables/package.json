@@ -1,0 +1,21 @@
+{
+  "name": "observables-ws",
+  "version": "0.0.1",
+  "description": "A workshop test observables",
+  "main": "src/index.js",
+  "scripts": {
+    "watch": "webpack --progress --colors --watch",
+    "build": "webpack --progress --colors",
+    "start:dev": "webpack-dev-server"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "css-loader": "^0.28.9",
+    "style-loader": "^0.20.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  }
+}
