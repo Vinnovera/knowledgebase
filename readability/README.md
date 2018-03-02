@@ -14,7 +14,7 @@ channel.consume(queueName, msg => {
 ```
 // Wait a bit before moving back to queue to prevent error spamming
 setTimeout(() => {
-channel.nack(msg, { requeue: true, });
+	channel.nack(msg, { requeue: true, });
 }, config.get('worker.nackDelay'));
 ```
 
