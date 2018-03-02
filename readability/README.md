@@ -47,7 +47,7 @@ Linting is a term that has become synonmous to formatting code to adhere to a se
 
 There are several popular and public code styles that can be used as is or as a starting point, some of which include:
 
-* [AirBnB])(https://github.com/airbnb/javascript)
+* [AirBnB](https://github.com/airbnb/javascript)
 * [Google](https://google.github.io/styleguide/jsguide.html)
 * [Idiomatic](https://github.com/rwaldron/idiomatic.js/)
 * [JavaScript Standard style](https://standardjs.com/)
