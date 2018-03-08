@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<title>Knowledgebase Service Worker Sample</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Simple Service Worker Sample</h1>
+		<img src="./logo2.svg">
+		<script src="./script.js"></script>
+		<script>
+			navigator.serviceWorker.register('./sw.js', {
+			  scope: './'
+			});
+		</script>
+	</body>
+</html>
