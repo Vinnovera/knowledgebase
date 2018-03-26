@@ -1,0 +1,22 @@
+{
+  "name": "webpack-and-babel-ws",
+  "version": "0.0.1",
+  "description": "A workshop test for webpack and babel",
+  "main": "src/index.js",
+  "scripts": {
+    "watch": "webpack --progress --colors --watch",
+    "server": "http-server ./dist -c-1 -p 8000",
+    "start": "npm run watch & npm run server"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "http-server": "^0.11.1",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "redux": "^3.7.2"
+  }
+}
