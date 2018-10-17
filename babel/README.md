@@ -12,14 +12,21 @@ const testFunc = ({ first = ['a', 'b'] }) => {
 ... turns into code like this:
 
 ```javascript
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
 var testFunc = function testFunc(_ref) {
-	var _ref$first = _ref.first,
-	    first = _ref$first === undefined ? ['a', 'b'] : _ref$first;
+  var _ref$first = _ref.first,
+      first = _ref$first === void 0 ? ['a', 'b'] : _ref$first;
 
-	var myFirstArray = [].concat(_toConsumableArray(first));
-	var mySecondArray = [].concat(_toConsumableArray(myFirstArray), ['c', 'd']);
+  var myFirstArray = _toConsumableArray(first);
+
+  var mySecondArray = _toConsumableArray(myFirstArray).concat(['c', 'd']);
 };
 ```
 
@@ -36,7 +43,7 @@ First install all packages needed:
 $ npm install
 ```
 
-Then start a [watcher](https://babeljs.io/docs/usage/cli/#babel-compile-files) so that your source files retranspile when saved:
+Then start a [watcher](https://babeljs.io/docs/en/babel-cli/) so that your source files retranspile when saved:
 
 ```bash
 $ npm run watch
@@ -45,7 +52,7 @@ $ npm run watch
 
 ### Try it out
 
-Babel uses different [Presets](https://babeljs.io/docs/plugins/#presets-official-presets) to transpile different sets of JavaScript. The `es2015` preset transpiles things that were ratified in 2015 (like arrow functions and destructuring), while `env` transpiles all yearly presets.
+Babel uses different [Presets](https://babeljs.io/docs/en/presets) to transpile different sets of JavaScript. The `es2015` preset transpiles things that were ratified in 2015 (like arrow functions and destructuring), while `env` transpiles all yearly presets.
 
 You define which presets to use in your `.babelrc` file.
 
